@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>My first site in Visual Code</title>
+    <style>
+      body {
+        background-color: black;
+        color: red;
+        display: block;
+        text-align: center;
+        margin: auto;
+      }
+      #container {
+        display: block;
+        margin: auto;
+        width: 400px;
+        height: 400px;
+        position: relative;
+        background: red;
+      }
+
+      #animate {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        background-color: black;
+        border-radius: 50%;
+      }
+    </style>
+</head>
+<body>
+  <h1>This is a basic HTML/CSS/JavaScript site!</h1>
+  <p>Please enjoy the following sweet embeded video and animation, cheers!</p>
+  <br />
+  <br />
+  <p>The "smash hit" Blister from Hollowpoint</p>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/Gf9a1U4BRs0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <br />
+  <br />
+  <p><button onclick="myMove()">Click for a super sweet animation.</button></p>
+
+  <div id="container">
+    <div id="animate"></div>
+  </div>
+  <script>
+    function myMove() {
+      var elem = document.getElementById("animate");
+      var pos = 0;
+      var id = setInterval(frame, 10);
+      function frame() {
+        if (pos == 350) {
+          clearInterval(id);
+        } else {
+          pos++;
+          elem.style.bottom = pos + "px";
+          elem.style.right = pos + "px";
+        }
+      }
+    }
+  </script>
+
+
+</body>
+</html>
